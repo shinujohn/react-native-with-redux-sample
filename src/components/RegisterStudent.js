@@ -13,7 +13,7 @@ import addStudent from './../actions/addStudentAction';
 const Item = Picker.Item;
 
 class RegisterStudent extends Component {
-  
+
     constructor(props) {
         super(props);
         this.state = {
@@ -26,8 +26,9 @@ class RegisterStudent extends Component {
         };
         this.handleClick = this.handleClick.bind(this);
         this.onValueChange = this.onValueChange.bind(this);
+        this.openDrawer = this.openDrawer.bind(this);
     }
-  
+
     onValueChange(value) {
         this.setState({
             gender: value,
@@ -42,13 +43,17 @@ class RegisterStudent extends Component {
         this.drawer._root.close();
     };
     openDrawer = () => {
-         this.drawer._root.open();
+        console.log('open drawer');
+        this.drawer._root.open();
     };
     render() {
         return (
             <Drawer
                 ref={(ref) => { this.drawer = ref; }}
-                content={<SideBar style={{ flex: 1, backgroundColor: 'black' }} />}
+                content={<SideBar 
+                    onSelect={this.closeDrawer.bind(this)}
+                    style={{ flex: 1, backgroundColor: 'black' }}
+                />}
                 onClose={() => this.closeDrawer()}
                 side='right'
             >
@@ -59,8 +64,7 @@ class RegisterStudent extends Component {
                         </Body>
                         <Right>
                             <Button
-                                transparent onPress={() => 
-                                    this.openDrawer()}
+                                transparent onPress={this.openDrawer}
                             >
                                 <Icon name='md-menu' />
                             </Button>

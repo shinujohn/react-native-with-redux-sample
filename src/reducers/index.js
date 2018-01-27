@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { ActionConst } from 'react-native-router-flux';
 import { studentsReducer } from './studentsReducer';
+import { mapReducer } from './mapReducer';
 
 const sceneReducer = (state = {}, { type, scene }) => {
     switch (type) {
@@ -13,5 +14,6 @@ const sceneReducer = (state = {}, { type, scene }) => {
 
 export const appReducer = combineReducers({
     sceneReducer,
-    students: studentsReducer
+    students: studentsReducer,
+    location: mapReducer
 });
