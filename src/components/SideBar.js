@@ -5,11 +5,11 @@ import { Actions } from 'react-native-router-flux';
 const routes = ['Student Details', 'Current Location', 'Profile'];
 export default class SideBar extends React.Component {
 
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
      
-        // this.handleClick = this.handleClick.bind(this);
-    }
+    //     // this.handleClick = this.handleClick.bind(this);
+    // }
     handleClick(action) {
         console.log(action);
         
@@ -29,7 +29,7 @@ export default class SideBar extends React.Component {
     }
     render() {
         return (
-            <Container style={{ backgroundColor: 'green' }} >
+            <Container style={{ backgroundColor: 'blue' }} >
                 <Content >
                     <List
                         dataArray={routes}
