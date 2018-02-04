@@ -1,8 +1,11 @@
 
 var wd = require('wd');
 var WdAndroid = require('wd-android');
-var async = require('asyncawait/async');
-var await = require('asyncawait/await');
+var assert = require('assert');
+var asserters = wd.asserters;
+
+// var async = require('asyncawait/async');
+// var await = require('asyncawait/await');
 
 desiredCaps = {
     'browserstack.user': 'markwilson5',
@@ -14,59 +17,59 @@ desiredCaps = {
     'browserstack.debug': true
 };
 
-// driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
+ driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
 
-// driver
-//     .init(desiredCaps)
-//     .then(function () {
-//         return driver.waitForElementByAccessibilityId('signUp', asserters.isDisplayed && asserters.isEnabled, 30000);
-//     })
-//     .then(function (searchElement) {
-//         return searchElement.click();
-//     }).fin(function () { return driver.quit(); })
-//     .done();
-
-
-describe("Using Appium and WdAndroid to test Android App.", function () {
-    this.timeout(300000);
-    var driver,
-        allPassed = true;
-
-    before(async function () {
-
-        var wdAndroid = new WdAndroid(wd);
-
-        driver = await wdAndroid.promiseChainRemote("http://hub-cloud.browserstack.com/wd/hub");
-
-        return driver
-            .init(desiredCaps)
-            .setImplicitWaitTimeout(10000);
-    });
+driver
+    .init(desiredCaps)
+    .then(function () {
+        return driver.waitForElementByAccessibilityId('signUp', asserters.isDisplayed && asserters.isEnabled, 30000);
+    })
+    .then(function (searchElement) {
+        return searchElement.click();
+    }).fin(function () { return driver.quit(); })
+    .done();
 
 
-    after(function () {
-        return driver.quit();
-    });
+// describe("Using Appium and WdAndroid to test Android App.", function () {
+//     this.timeout(300000);
+//     var driver,
+//         allPassed = true;
+
+//     before(async function () {
+
+//         var wdAndroid = new WdAndroid(wd);
+
+//         driver = await wdAndroid.promiseChainRemote("http://hub-cloud.browserstack.com/wd/hub");
+
+//         return driver
+//             .init(desiredCaps)
+//             .setImplicitWaitTimeout(10000);
+//     });
 
 
-    afterEach(function () {
-        allPassed = allPassed && this.currentTest.state === 'passed';
-    });
+//     after(function () {
+//         return driver.quit();
+//     });
 
 
-    it("should find an element", async function () {
+//     afterEach(function () {
+//         allPassed = allPassed && this.currentTest.state === 'passed';
+//     });
 
-        let elName = await driver.elementsByAccessibilityId('name');
-        let elEmail = await driver.elementsByAccessibilityId('email');
-        let el = await driver.elementsByAccessibilityId('signUp');
-        //let elBackButton = await driver.elementsById('navigationBarBackground');
-        // android:id/navigationBarBackground
-        await elName[0].setText("Girish Talekar").click().back();
-        await elEmail[0].setText("talekar.g@gmail.com").click().back();
-        return el[0].click().sleep(4000);
-    });
 
-});
+//     it("should find an element", async function () {
+
+//         let elName = await driver.elementsByAccessibilityId('name');
+//         let elEmail = await driver.elementsByAccessibilityId('email');
+//         let el = await driver.elementsByAccessibilityId('signUp');
+//         //let elBackButton = await driver.elementsById('navigationBarBackground');
+//         // android:id/navigationBarBackground
+//         await elName[0].setText("Girish Talekar").click().back();
+//         await elEmail[0].setText("talekar.g@gmail.com").click().back();
+//         return el[0].click().sleep(4000);
+//     });
+
+// });
 
 /*
 driver
