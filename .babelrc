@@ -1,6 +1,5 @@
 {
   "presets": [
-    "react-native",
-    "syntax-async-functions"
+    "react-native"
   ]
 }
