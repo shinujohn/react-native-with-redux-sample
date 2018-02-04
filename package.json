@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "react-native bundle --platform android --dev true --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
-    "test": "jest"
+    "test": "jest",
+    "single": "mocha ./automationTest/sampleTest.js"
   },
   "dependencies": {
     "@expo/vector-icons": "^6.2.2",
@@ -18,7 +19,9 @@
     "react-native-scrollable-tab-view": "^0.8.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "wd": "^1.5.0",
+    "wd-android": "^0.1.1"
   },
   "devDependencies": {
     "babel-jest": "22.1.0",
