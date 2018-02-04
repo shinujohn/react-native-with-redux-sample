@@ -4,8 +4,8 @@ var WdAndroid = require('wd-android');
 var assert = require('assert');
 var asserters = wd.asserters;
 
-// var async = require('asyncawait/async');
-// var await = require('asyncawait/await');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 
 desiredCaps = {
     'browserstack.user': 'markwilson5',
