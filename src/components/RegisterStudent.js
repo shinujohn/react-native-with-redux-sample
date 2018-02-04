@@ -76,6 +76,7 @@ class RegisterStudent extends Component {
                                 <InputGroup>
                                     <Input
                                         placeholder="Name"
+                                        accessibilityLabel='name'
                                         onChangeText={(name) => this.setState({ name })}
                                     />
                                 </InputGroup>
@@ -85,6 +86,7 @@ class RegisterStudent extends Component {
                                 <InputGroup>
                                     <Icon name="ios-person" style={{ color: 'green' }} />
                                     <Input
+                                     accessibilityLabel='email'
                                         placeholder="EMAIL" onChangeText={
                                             (email) => this.setState({ email })
                                         }
@@ -95,6 +97,7 @@ class RegisterStudent extends Component {
                                 <InputGroup>
                                     <Icon name="ios-unlock" style={{ color: '#0A69FE' }} />
                                     <Input
+                                     accessibilityLabel='password'
                                         placeholder="PASSWORD" secureTextEntry
                                         onChangeText={(password) => this.setState({ password })}
                                     />
@@ -104,6 +107,7 @@ class RegisterStudent extends Component {
                                 <InputGroup>
                                     <Icon name="ios-call" style={{ color: '#0A69FE' }} />
                                     <Input
+                                     accessibilityLabel='phone'
                                         placeholder="PHONE" keyboardType="numeric"
                                         onChangeText={(phone) => this.setState({ phone })}
                                     />
@@ -129,6 +133,7 @@ class RegisterStudent extends Component {
                             <ListItem>
                                 <InputGroup >
                                     <Input
+                                     accessibilityLabel='address'
                                         multiline
                                         stackedLabel label="Permanent Address"
                                         placeholder="Address"
@@ -138,6 +143,7 @@ class RegisterStudent extends Component {
                             </ListItem>
                         </List>
                         <Button
+                            accessibilityLabel='signUp'
                             style={{ alignSelf: 'center', marginTop: 20, marginBottom: 20 }}
                             onPress={this.handleClick}
                         >
