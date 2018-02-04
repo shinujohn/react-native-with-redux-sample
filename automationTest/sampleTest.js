@@ -1,6 +1,8 @@
 
 var wd = require('wd');
 var WdAndroid = require('wd-android');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 
 desiredCaps = {
     'browserstack.user': 'markwilson5',
