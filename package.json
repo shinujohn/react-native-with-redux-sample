@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-native bundle --platform android --dev true --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
     "test": "jest",
-    "single": "mocha ./automationTest/sampleTest.js",
+    "single": "mocha ./automationTest/sampleTest.js --reporter mocha-multi-reporters --timeout 30000",
     "singleWait": "mocha ./automationTest/sampleTestWithWait.js"
   },
   "dependencies": {
@@ -30,6 +30,8 @@
     "babel-preset-react-native": "4.0.0",
     "eslint-config-rallycoding": "^3.2.0",
     "jest": "22.1.4",
+    "mocha-junit-reporter": "^1.17.0",
+    "mocha-multi-reporters": "^1.1.7",
     "react-test-renderer": "16.2.0"
   },
   "jest": {
