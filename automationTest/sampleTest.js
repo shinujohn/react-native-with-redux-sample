@@ -10,7 +10,7 @@ desiredCaps = {
     'build': 'Node Android',
     'name': 'single_test',
     'device': 'Google Pixel',
-    'app': 'bs://sjohn13011a4300946cce2440cd2695d51874bd9ad303',
+    'app': 'sjohn13011a4300946cce2440cd2695d51874bd9ad303',
     'browserstack.debug': true
 };
 
